@@ -3,7 +3,7 @@
         <title>Cadastro</title>
     </head>
         
-    <body leftmargin=200 background="resources/usuario.jpg">
+    <body background="resources/usuario.jpg">
         <h2>Cadastro</h2>
         <div>
             <form method="post" action="insert_usuario.jsp">

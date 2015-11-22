@@ -50,8 +50,8 @@
                 <td align = center><%out.println(rs.getString("autor"));%></td>
                 <td align = center><%out.println(rs.getString("usuario"));%></td>
                 <td align = center><%out.println(rs.getString("dh_registro"));%></td>
-                <td align = center><a href='editar.jsp?id=<%out.print(rs.getString("codigo"));%>'>
-                        <input type="button" name="botaoEviar" value ="Editar"/></a> 
+                <td align = center><a href='atualiza_livros.jsp?codigo=<%out.print(rs.getString("codigo"));%>'>
+                        <input type="button" name="botaoEviar" value ="Editar"/></a>
                 </td>
                 <td align = center><a href='deleteliv.jsp?codigo=<%out.print(rs.getString("codigo"));%>'>
                         <input type="button" name="botaoExcluir" value ="Excluir"/></a> 

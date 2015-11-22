@@ -49,7 +49,7 @@
                 <td align = center><%out.println(rs.getString("serie"));%></td>
                 <td align = center><%out.println(rs.getString("usuario"));%></td>
                 <td align = center><%out.println(rs.getString("dh_registro"));%></td>
-                <td align = center><a href='editar.jsp?id=<%out.print(rs.getString("codigo"));%>'>
+                <td align = center><a href='atualiza_cartao.jsp?codigo=<%out.print(rs.getString("codigo"));%>'>
                         <input type="button" name="botaoEviar" value ="Editar"/></a> 
                 </td>
                 <td align = center><a href='deletecar.jsp?codigo=<%out.print(rs.getString("codigo"));%>'>
