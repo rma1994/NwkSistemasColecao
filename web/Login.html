@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Painel de login</title>
+        <meta charset="utf-8" />
+        <style type="text/css">
+        @font-face {
+          font-family: 'Sigmar One';
+          font-style: normal;
+          font-weight: 400;
+          src: local('Sigmar One'), local('SigmarOne');
+        }
+        body{
+            margin: 0;
+            font: 14px Lucida sans;
+            background: #333 no-repeat;
+            -webkit-background-size: cover;
+              -moz-background-size: cover;
+                -o-background-size: cover;
+                    background-size: cover;
+            color: #fff;
+        }
+        a, a:active, a:focus{
+            text-decoration: none;
+            color: #fafafa;
+        }
+        #logo{
+            font: 30px 'Sigmar One';
+            text-align: center;
+            padding: 0;
+            margin: 5em 0 0;
+            text-shadow: rgba(0,0,0,1) 0 0 5px;
+        }
+        form{
+            margin: 0 auto;
+            max-width: 50%;
+        }
+        #wrap{
+            width: 100%;
+            background: rgba(255,255,255,.3);
+            border-radius: 5px;
+            text-shadow: rgba(0,0,0,.5) 1px 1px 0;
+            box-shadow: rgba(0,0,0,.2) 0 0 3px;
+            text-align: center;
+            padding: 3em 1em;
+        }
+        hr{
+            margin: 1em;
+            border: 0;
+            border-top: 1px rgba(0,0,0,.2) solid;
+            border-bottom: 1px rgba(255,255,255,.2) solid;
+        }
+        #register{
+            background: url('http://imgur.com/EK2ZA9X.png') repeat-x scroll 0px 0px #8FBE5F;
+            box-shadow: 0px 1px 0px 0px #ADD08B inset, 0px 2px 3px rgba(0, 0, 0, 0.2);
+            text-shadow: 0px -1px 0px #474747;
+            border: 1px solid #51842F;
+            border-radius: 3px;
+            color: #FFF;
+            cursor: pointer;
+            padding: .3em 5em;
+            display: inline-block;
+            margin: 0 2em 1em;
+        }
+        #copyrights{
+            font-size: 13px;
+        }
+        </style>
+    </head>
+    <body>
+      
+        <form action="/login?">
+            <p id="logo">Coleção</p>
+            <div id="wrap">
+                <hr>
+                <label for="username">
+                    Nome:
+                    <input name="username" type="text" />
+                </label>
+
+                <label for="password">
+                    Senha:
+                    <input name="password" type="password" />
+                </label>
+
+                <label for="login">
+                    <input name="login" type="submit" value="Login" />
+                </label>
+                <hr>
+
+            </div>
+        </form>
+      
+    </body>
+    </html>
