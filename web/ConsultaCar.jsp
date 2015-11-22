@@ -52,7 +52,7 @@
                 <td align = center><a href='editar.jsp?id=<%out.print(rs.getString("codigo"));%>'>
                         <input type="button" name="botaoEviar" value ="Editar"/></a> 
                 </td>
-                <td align = center><a href='delete.jsp?id=<%out.print(rs.getString("codigo"));%>'>
+                <td align = center><a href='deletecar.jsp?codigo=<%out.print(rs.getString("codigo"));%>'>
                         <input type="button" name="botaoExcluir" value ="Excluir"/></a> 
                 </td>
             </tr>
