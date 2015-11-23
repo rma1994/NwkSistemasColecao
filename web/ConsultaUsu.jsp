@@ -36,33 +36,33 @@
             <%
                     Connection con = new conexao().getConnection();
                     try{
-                        String sql = "SELECT codigo, nome FROM usuario ORDER BY codigo";
+                        String sql = "SELECT codigo, nome FROM usuario WHERE codigo=" + session.getAttribute("codigo");
                         Statement stm = con.createStatement();
                         ResultSet rs = stm.executeQuery(sql);
 
                         while(rs.next()){
-                %>
+            %>
 
-                <tr>
-                    <td align = center><%out.println(rs.getString("codigo"));%></td>
-                    <td align = center><%out.println(rs.getString("nome"));%></td>
-                    <td align = center><a href='editar.jsp?id=<%out.print(rs.getString("codigo"));%>'>
-                            <input type="button" name="botaoEviar" value ="Editar"/></a> 
-                    </td>
-                    <td align = center><a href='deleteusu.jsp?codigo=<%out.print(rs.getString("codigo"));%>'>
-                            <input type="button" name="botaoExcluir" value ="Excluir"/></a> 
-                    </td>
-                </tr>
+            <tr>
+                <td align = center><%out.println(rs.getString("codigo"));%></td>
+                <td align = center><%out.println(rs.getString("nome"));%></td>
+                <td align = center><a href='atualiza_usuario.jsp?codigo=<%out.print(rs.getString("codigo"));%>'>
+                        <input type="button" name="botaoEviar" value ="Editar"/></a> 
+                </td>
+                <td align = center><a href='deleteusu.jsp?codigo=<%out.print(rs.getString("codigo"));%>'>
+                        <input type="button" name="botaoExcluir" value ="Excluir"/></a> 
+                </td>
+            </tr>
 
-                <%
-                    }
-                    rs.close();
-                    stm.close();
-                    con.close();
-                }catch (SQLException e){
-                    System.out.println("Erro de Comunicação" + e.getMessage());
+            <%
                 }
-                %>
+                rs.close();
+                stm.close();
+                con.close();
+            }catch (SQLException e){
+                System.out.println("Erro de Comunicação" + e.getMessage());
+            }
+            %>
             
 		
 	</table>
