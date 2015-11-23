@@ -4,6 +4,7 @@
     Author     : rma19_000
 --%>
 
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -32,16 +33,34 @@
         <!--//insert on db-->
         <%
             /*
-            O bloco abaixo recebe os dados inseridos pelo usuario na pagina livros.html.
+            O bloco abaixo recebe os dados inseridos pelo usuario na pagina livros.html e
+            Verifica se estes dados não estão duplicados no banco de dados
             Após isso, ele insere esses dados no banco de dados e redireciona o usuario de volta à pagina corpo.html
             Caso algo de errado no caminho, ele imprime em linha de comando.
             */
-            String nome = request.getParameter("nome");
-            String autor = request.getParameter("autor");
-            String usuario = request.getParameter("usuario");
+            String nome = request.getParameter("nome").trim();
+            String autor = request.getParameter("autor").trim();
+            String usuario = request.getParameter("usuario").trim();
             
             Connection con = new conexao().getConnection();
             try{
+                String sqlValida = "SELECT codigo, nome, autor, usuario FROM livro "
+                        + "WHERE nome = ? "
+                        + "AND autor = ? ";
+                
+                PreparedStatement prepStmtValida = con.prepareStatement(sqlValida);
+                prepStmtValida.setString(1, nome.toUpperCase());
+                prepStmtValida.setString(2, autor.toUpperCase());
+                ResultSet rs = prepStmtValida.executeQuery();
+                if(rs.isBeforeFirst() || rs.isAfterLast()){
+                    //EXISTE
+                    
+                    while(rs.next()){
+                        String redirectURL = "itemDuplicado.jsp?codigo=" + rs.getInt("codigo");
+                        response.sendRedirect(redirectURL);
+                    }
+                } else {
+                
                 String sql = "INSERT INTO livro(nome, autor, usuario, dh_registro) VALUES (?,?,?,?)";
                 PreparedStatement prepStmt = con.prepareStatement(sql);
                 prepStmt.setString(1, nome.toUpperCase());
@@ -51,10 +70,10 @@
                 prepStmt.execute();
                 prepStmt.close();
                 System.out.println("completo");
-                
-                String redirectURL = "corpo.html";
+
+                String redirectURL = "ConsultaLiv.jsp";
                 response.sendRedirect(redirectURL);
-                
+                }
             } catch (Exception e){
                 System.out.println(e);
             }

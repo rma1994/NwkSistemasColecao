@@ -17,11 +17,12 @@
 <html>
 	<head>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-            <title>Cadastro de CartÃ£o</title>
+            <title>Cadastro de Cartão</title>
         </head>
         
         <body leftmargin=200 background="resources/cartao.jpg">
             <div>
+                <!--Tela para cadastro.-->
                 <form method="post" action="insert_cartao.jsp">
                     <!--CÃ³digo: <input type="text" name="cod" size="4"/> <br/><br/>-->
                     Nome da Coleção: <input type="text" name="nome" size="40"/> <br/><br/>

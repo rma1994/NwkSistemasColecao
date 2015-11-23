@@ -19,7 +19,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Cadastro de Miniaturas</title>
     </head>
-    
+    <!--Tela para cadastro.-->
     <body leftmargin=200 background="resources/buneco.jpg">
         <div>
             <form method="post" action="insert_miniatura.jsp">

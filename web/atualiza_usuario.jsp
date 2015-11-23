@@ -21,6 +21,8 @@
     </head>
         
     <body background="resources/usuario.jpg">
+        <!--O bloco abaixo preenche os campos com as informações do item selecionado.
+            Para isso ele busca no banco as informações do produto, usando o id recebido pela tela anterior.-->
         <%
             Connection con = new conexao().getConnection();
             try{

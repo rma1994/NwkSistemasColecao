@@ -20,11 +20,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <!--Este bloco atualiza as informações do item selecionado, tendo como parametro o id recebido.
+    Todas as informações necessarias para realizar esta atualização, devem ser enviadas pela tela anterior-->
     <body>
         <%
             int codigo = Integer.parseInt(request.getParameter("codigo"));
-            String nome = request.getParameter("nome");
-            String senha = request.getParameter("senha");
+            String nome = request.getParameter("nome").trim();
+            String senha = request.getParameter("senha").trim();
             
             if(!senha.equals("") && senha!=null){
                 Connection con = new conexao().getConnection();

@@ -19,7 +19,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Cadastro de Livro</title>
     </head>
-    
+    <!--Tela para cadastro.-->
     <body leftmargin=200 background="resources/livros.jpg">
         <div>
             <form method="post" action="insert_livro.jsp">

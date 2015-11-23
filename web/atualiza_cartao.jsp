@@ -22,6 +22,8 @@
         </head>
         
         <body background="resources/cartao.jpg">
+            <!--O bloco abaixo preenche os campos com as informações do item selecionado.
+            Para isso ele busca no banco as informações do produto, usando o id recebido pela tela anterior.-->
              <%
                 int codigo = Integer.parseInt(request.getParameter("codigo")); 
                 

@@ -38,7 +38,7 @@
                 prepStmt.close();
                 System.out.println("completo");
                 
-                String redirectURL = "corpo.html";
+                String redirectURL = "ConsultaCar.jsp";
                 response.sendRedirect(redirectURL);
                 
             } catch (Exception e){
