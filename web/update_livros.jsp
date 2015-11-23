@@ -37,9 +37,9 @@
                         + "usuario = ? "
                         + "WHERE codigo = ?";
                 PreparedStatement prepStmt = con.prepareStatement(sql);
-                prepStmt.setString(1, nome);
-                prepStmt.setString(2, autor);
-                prepStmt.setString(3, usuario);
+                prepStmt.setString(1, nome.toUpperCase());
+                prepStmt.setString(2, autor.toUpperCase());
+                prepStmt.setString(3, usuario.toUpperCase());
                 prepStmt.setInt(4, codigo);
                 
                 prepStmt.executeUpdate();

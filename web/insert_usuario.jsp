@@ -42,7 +42,7 @@
             try{
                 String sql = "INSERT INTO usuario(nome, senha, dh_registro) VALUES (?,?,?)";
                 PreparedStatement prepStmt = con.prepareStatement(sql);
-                prepStmt.setString(1, nome);
+                prepStmt.setString(1, nome.toUpperCase());
                 prepStmt.setString(2, senha);
                 prepStmt.setString(3, dataFormatada);
                 prepStmt.execute();

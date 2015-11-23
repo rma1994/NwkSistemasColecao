@@ -45,9 +45,9 @@
             try{
                 String sql = "INSERT INTO cartoes(nome, serie, usuario, dh_registro) VALUES (?,?,?,?)";
                 PreparedStatement prepStmt = con.prepareStatement(sql);
-                prepStmt.setString(1, nome);
-                prepStmt.setString(2, serie);
-                prepStmt.setString(3, usuario);
+                prepStmt.setString(1, nome.toUpperCase());
+                prepStmt.setString(2, serie.toUpperCase());
+                prepStmt.setString(3, usuario.toUpperCase());
                 prepStmt.setString(4, dataFormatada);
                 prepStmt.execute();
                 prepStmt.close();

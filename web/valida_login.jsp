@@ -28,7 +28,7 @@
             Connection con = new conexao().getConnection();
             try{
                 String sql = "SELECT nome, senha FROM usuario "
-                        + "WHERE nome='" + usuario + "' AND "
+                        + "WHERE nome='" + usuario.toUpperCase() + "' AND "
                         + "senha='" + senha + "'";
                 Statement stm = con.createStatement();
                 ResultSet rs = stm.executeQuery(sql);
@@ -45,7 +45,7 @@
                     
                     while(rsId.next()){
                         //System.out.println(rsId.getString("nome"));
-                        session.setAttribute("nome", rsId.getString("nome"));
+                        session.setAttribute("nome", rsId.getString("nome").toUpperCase());
                         session.setAttribute("codigo", rsId.getInt("codigo"));
                     }
                     
